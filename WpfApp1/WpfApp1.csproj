@@ -83,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ApplicationContext.cs" />
+    <Compile Include="Cabinet.xaml.cs">
+      <DependentUpon>Cabinet.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Form.xaml.cs">
       <DependentUpon>Form.xaml</DependentUpon>
     </Compile>
@@ -96,6 +100,10 @@
     <Compile Include="Website.xaml.cs">
       <DependentUpon>Website.xaml</DependentUpon>
     </Compile>
+    <Page Include="Cabinet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Form.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -19,9 +19,38 @@ namespace WpfApp1
     /// </summary>
     public partial class Inf_system : Window
     {
+        ApplicationContext db;
         public Inf_system()
         {
             InitializeComponent();
+            db = new ApplicationContext();
+
+           
+        }
+
+        private void App(object sender, RoutedEventArgs e)
+        {
+            string last_name = input_last_name.Text.Trim();
+            string first_name = input_first_name.Text.Trim();
+            string middle_name = input_middle_name.Text.Trim();
+
+            input_last_name.ToolTip = "";
+            input_last_name.Background = Brushes.Transparent;
+            input_first_name.ToolTip = "";
+            input_first_name.Background = Brushes.Transparent;
+            input_middle_name.ToolTip = "";
+            input_middle_name.Background = Brushes.Transparent;
+
+            Teacher teacher = new Teacher(last_name, first_name, middle_name);
+
+            db.Teachers.Add(teacher);
+            db.SaveChanges();
+        }
+
+        private void Button_cabinet(object sender, RoutedEventArgs e)
+        {
+            Cabinet cabinet = new Cabinet();
+            cabinet.Show();
         }
     }
 }

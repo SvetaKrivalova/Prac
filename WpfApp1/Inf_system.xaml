@@ -6,7 +6,39 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="Inf_system" Height="450" Width="800">
-    <Grid>
-        
+    <Grid Margin="0,0,0.333,-0.333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="512*"/>
+            <ColumnDefinition Width="281*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="input_last_name" HorizontalAlignment="Left" Height="23" Margin="420,131,0,0" TextWrapping="Wrap" Text="Фамилия" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="input_first_name" HorizontalAlignment="Left" Height="23" Margin="420,184,0,0" TextWrapping="Wrap" Text="Имя" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="input_middle_name" HorizontalAlignment="Left" Height="23" Margin="420,236,0,0" TextWrapping="Wrap" Text="Отчество" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="439,306,0,0" VerticalAlignment="Top" Width="75" Click="App" Height="21" Grid.ColumnSpan="2"/>
+        <Button Content="Список преподавателей" Grid.Column="1" HorizontalAlignment="Left" Margin="112,184,0,0" VerticalAlignment="Top" Width="161" Height="23" Click="Button_cabinet"/>
+        <TabControl HorizontalAlignment="Left" Height="249" Margin="10,10,0,0" VerticalAlignment="Top" Width="369">
+            <TabItem Header="Преподаватели">
+                <Grid Background="#FFE5E5E5">
+                    <ListView x:Name="list_teachers" HorizontalAlignment="Left" Height="201" Margin="10,10,0,0" VerticalAlignment="Top" Width="343">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Last_name}">Фамилия</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=First_name}">Имя</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=Middle_name}">Отчество</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+
+
+            </TabItem>
+            <TabItem Header="Курсы">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Нагрузка">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>

@@ -34,5 +34,10 @@ namespace WpfApp1
             this.first_name = first_name;
             this.middle_name = middle_name;
         }
+
+        public override string ToString()
+        {
+            return "Преподаватель:" + Last_name + " " + First_name + " " + Middle_name;
+        }
     }
 }
